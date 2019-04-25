@@ -114,7 +114,7 @@ namespace OrderForm.Views
                 formValid = false;
                 FormEmailError.Text = "This field cannot be empty!";
             }
-            else if (!Regex.IsMatch(emailField, @"^[\w\.\-\+]+@\w+-*\w+.\w+$"))
+            else if (!Regex.IsMatch(emailField, @"^[\w\.\-\+]+@\w+-*\w+\.\w+$"))
             {
                 formValid = false;
                 FormEmailError.Text = "This field does not contain a valid email address!";

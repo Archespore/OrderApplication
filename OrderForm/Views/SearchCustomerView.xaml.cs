@@ -123,7 +123,7 @@ namespace OrderForm.Views
             string emailField = FormTextBoxEmail.Text.Trim();
             if (emailField != String.Empty)
             {
-                if (!Regex.IsMatch(emailField, @"^[\w\.\-\+]+@\w+-*\w+.\w+$"))
+                if (!Regex.IsMatch(emailField, @"^[\w\.\-\+]+@\w+-*\w+\.\w+$"))
                 {
                     formValid = false;
                     FormEmailError.Text = "This field does not contain a valid email address!";
