@@ -7,10 +7,10 @@ namespace OrderForm
 {
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
+    /// This is now unused, no longer needed
     /// </summary>
     public partial class LoginWindow : Window
     {
-        private DatabaseConnection connection;
 
         #region Constructor
         /// <summary>
