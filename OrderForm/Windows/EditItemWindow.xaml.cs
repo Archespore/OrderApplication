@@ -35,7 +35,6 @@ namespace OrderForm.Windows
             this.parentWindow = parentWindow;
             this.menuItem = menuItem;
             this.editable = editable;
-            Console.WriteLine(editable);
 
             modifiersPairList = menuItem.menuItemModifiers.ToList();
             DataContext = modifiersPairList;

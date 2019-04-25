@@ -45,8 +45,8 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="AddModifierButton" Content="Add to Modifier" Margin="40,5,20,15" Grid.Column="0" IsEnabled="{Binding Path=EditItemWindow.editable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Click="AddModifierButton_Click"/>
-                <Button x:Name="RemoveModifierButton" Content="Remove from Modifier" Margin="20,5,40,15" Grid.Column="1" IsEnabled="{Binding Path=EditItemWindow.editable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Click="RemoveModifierButton_Click"/>
+                <Button x:Name="AddModifierButton" Content="Add to Modifier" Margin="40,5,20,15" Grid.Column="0" IsEnabled="{Binding Path=editable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Click="AddModifierButton_Click"/>
+                <Button x:Name="RemoveModifierButton" Content="Remove from Modifier" Margin="20,5,40,15" Grid.Column="1" IsEnabled="{Binding Path=editable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Click="RemoveModifierButton_Click"/>
             </Grid>
 
             <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">
@@ -58,9 +58,9 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <RadioButton x:Name="RanchRadioButton" GroupName="Dressing" IsEnabled="{Binding Path=EditItemWindow.editable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Content="Ranch" Grid.Column="0" HorizontalAlignment="Center" Tag="0" Checked="DressingRadioButton_Checked"/>
-                        <RadioButton x:Name="ItalianRadioButton" GroupName="Dressing" IsEnabled="{Binding Path=EditItemWindow.editable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Content="Italian" Grid.Column="1" HorizontalAlignment="Center" Tag="1" Checked="DressingRadioButton_Checked"/>
-                        <RadioButton x:Name="CaesarRadioButton" GroupName="Dressing" IsEnabled="{Binding Path=EditItemWindow.editable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Content="Caesar" Grid.Column="2" HorizontalAlignment="Center" Tag="2" Checked="DressingRadioButton_Checked"/>
+                        <RadioButton x:Name="RanchRadioButton" GroupName="Dressing" IsEnabled="{Binding Path=editable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Content="Ranch" Grid.Column="0" HorizontalAlignment="Center" Tag="0" Checked="DressingRadioButton_Checked"/>
+                        <RadioButton x:Name="ItalianRadioButton" GroupName="Dressing" IsEnabled="{Binding Path=editable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Content="Italian" Grid.Column="1" HorizontalAlignment="Center" Tag="1" Checked="DressingRadioButton_Checked"/>
+                        <RadioButton x:Name="CaesarRadioButton" GroupName="Dressing" IsEnabled="{Binding Path=editable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Content="Caesar" Grid.Column="2" HorizontalAlignment="Center" Tag="2" Checked="DressingRadioButton_Checked"/>
                     </Grid>
                 </StackPanel>
 
@@ -78,13 +78,13 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <RadioButton x:Name="CokeRadioButton" GroupName="Soda" IsEnabled="{Binding Path=EditItemWindow.editable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Content="Coke" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Margin="0,0,0,10" Tag="0" Checked="SodaRadioButton_Checked"/>
-                        <RadioButton x:Name="DietCokeRadioButton" GroupName="Soda" IsEnabled="{Binding Path=EditItemWindow.editable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Content="Diet Coke" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,10" Tag="1" Checked="SodaRadioButton_Checked"/>
-                        <RadioButton x:Name="SpriteRadioButton" GroupName="Soda" IsEnabled="{Binding Path=EditItemWindow.editable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Content="Sprite" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" Margin="0,0,0,10" Tag="2" Checked="SodaRadioButton_Checked"/>
+                        <RadioButton x:Name="CokeRadioButton" GroupName="Soda" IsEnabled="{Binding Path=editable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Content="Coke" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Margin="0,0,0,10" Tag="0" Checked="SodaRadioButton_Checked"/>
+                        <RadioButton x:Name="DietCokeRadioButton" GroupName="Soda" IsEnabled="{Binding Path=editable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Content="Diet Coke" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,10" Tag="1" Checked="SodaRadioButton_Checked"/>
+                        <RadioButton x:Name="SpriteRadioButton" GroupName="Soda" IsEnabled="{Binding Path=editable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Content="Sprite" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" Margin="0,0,0,10" Tag="2" Checked="SodaRadioButton_Checked"/>
 
-                        <RadioButton x:Name="MntDewRadioButton" GroupName="Soda" IsEnabled="{Binding Path=EditItemWindow.editable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Content="Mountain Dew" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Tag="3" Checked="SodaRadioButton_Checked"/>
-                        <RadioButton x:Name="FantaRadioButton" GroupName="Soda" IsEnabled="{Binding Path=EditItemWindow.editable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Content="Fanta" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Tag="4" Checked="SodaRadioButton_Checked"/>
-                        <RadioButton x:Name="RootbeerRadioButton" GroupName="Soda" IsEnabled="{Binding Path=EditItemWindow.editable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Content="Rootbeer" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Tag="5" Checked="SodaRadioButton_Checked"/>
+                        <RadioButton x:Name="MntDewRadioButton" GroupName="Soda" IsEnabled="{Binding Path=editable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Content="Mountain Dew" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Tag="3" Checked="SodaRadioButton_Checked"/>
+                        <RadioButton x:Name="FantaRadioButton" GroupName="Soda" IsEnabled="{Binding Path=editable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Content="Fanta" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Tag="4" Checked="SodaRadioButton_Checked"/>
+                        <RadioButton x:Name="RootbeerRadioButton" GroupName="Soda" IsEnabled="{Binding Path=editable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Content="Rootbeer" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Tag="5" Checked="SodaRadioButton_Checked"/>
                     </Grid>
                 </StackPanel>
             </StackPanel>
