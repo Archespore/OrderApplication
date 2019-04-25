@@ -1,0 +1,35 @@
+﻿<Window x:Class="OrderForm.Windows.CustomerListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OrderForm.Windows"
+        mc:Ignorable="d"
+        Title="Customer List" Height="450" Width="800">
+    <Grid Background="#FFF3F2F2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Customer Search Results" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Bebas Neue" FontSize="36"/>
+        <ListView x:Name="CustomerList" Grid.Row="1">
+            <ListView.View>
+                <GridView x:Name="GridHeaders">
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding customerID}"/>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding customerName}"/>
+                    <GridViewColumn Header="Phone" DisplayMemberBinding="{Binding customerPhone}"/>
+                    <GridViewColumn Header="Email" DisplayMemberBinding="{Binding customerEmail}"/>
+                    <GridViewColumn Header="Address" DisplayMemberBinding="{Binding customerAddress}"/>
+                    <GridViewColumn Header="City" DisplayMemberBinding="{Binding customerCity}"/>
+                    <GridViewColumn Header="State" DisplayMemberBinding="{Binding customerState}"/>
+                    <GridViewColumn Header="Zip" DisplayMemberBinding="{Binding customerZip}"/>
+                </GridView>
+            </ListView.View>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <EventSetter Event="MouseDoubleClick" Handler="ItemClicked"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+    </Grid>
+</Window>

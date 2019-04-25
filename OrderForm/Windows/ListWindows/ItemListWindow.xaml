@@ -1,0 +1,30 @@
+﻿<Window x:Class="OrderForm.Windows.ItemListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OrderForm.Windows"
+        mc:Ignorable="d"
+        Title="Item List" Height="450" Width="800">
+    <Grid Background="#FFF3F2F2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Item List" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Bebas Neue" FontSize="36"/>
+        <ListView x:Name="ItemList" Grid.Row="1">
+            <ListView.View>
+                <GridView x:Name="GridHeaders">
+                    <GridViewColumn Width="150" Header="Name" DisplayMemberBinding="{Binding menuItemName}"/>
+                    <GridViewColumn Width="50" Header="Price" DisplayMemberBinding="{Binding menuItemPrice}"/>
+                    <GridViewColumn Width="300" Header="Description" DisplayMemberBinding="{Binding menuItemDescription}"/>
+                </GridView>
+            </ListView.View>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <EventSetter Event="MouseDoubleClick" Handler="ItemClicked"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+    </Grid>
+</Window>

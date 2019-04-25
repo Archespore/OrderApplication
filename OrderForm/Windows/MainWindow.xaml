@@ -1,0 +1,92 @@
+﻿<Window x:Class="OrderForm.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OrderForm"
+        xmlns:views="clr-namespace:OrderForm.Views"
+        mc:Ignorable="d"
+        Title="{Binding windowName}" 
+        Height="720" Width="1280"
+        MinHeight="630" MinWidth="1120">
+    <Border Padding="20" Background="#FFBFBDBD">
+        <Grid>
+            <Border Background="#FFF3F2F2" BorderThickness="3">
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#3FA6D8FB"/>
+                        <GradientStop Color="#FFA6D8FB" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+            </Border>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0">
+                    <TextBlock Text="Menu" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Bebas Neue" FontSize="24" Margin="0,5,0,0"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="25" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="CreateCustomerButton" Grid.Column="1" Content="Create new customer" Margin="15,0" Click="CreateCustomerButton_Click"/>
+                        <Button x:Name="CreateOrderButton" Grid.Column="2" Content="Create new order" Margin="15,0" Click="CreateOrderButton_Click"/>
+                        <Button x:Name="SearchCustomerButton" Grid.Column="3" Content="Search for customer" Margin="15,0" Click="SearchCustomerButton_Click"/>
+                        <Button x:Name="SearchOrderButton" Grid.Column="4" Content="Search for order" Margin="15,0" Click="SearchOrderButton_Click"/>
+                        <Button x:Name="ViewMenuButton" Grid.Column="5" Content="View menu" Margin="15,0" Click="ViewMenuButton_Click"/>
+                    </Grid>
+                </StackPanel>
+
+                <TabControl x:Name="ActiveTabControl" ItemsSource="{Binding activeTabs}" SelectedIndex="0" Grid.Row="1" Margin="5">
+                    <TabControl.Resources>
+                        <DataTemplate DataType="{x:Type local:CreateCustomerTab}">
+                            <views:CreateCustomerView/>
+                        </DataTemplate>
+                        <DataTemplate DataType="{x:Type local:CreateOrderTab}">
+                            <views:CreateOrderView/>
+                        </DataTemplate>
+                        <DataTemplate DataType="{x:Type local:SearchCustomerTab}">
+                            <views:SearchCustomerView/>
+                        </DataTemplate>
+                        <DataTemplate DataType="{x:Type local:SearchOrderTab}">
+                            <views:SearchOrderView/>
+                        </DataTemplate>
+                        <DataTemplate DataType="{x:Type local:ViewMenuTab}">
+                            <views:MenuView/>
+                        </DataTemplate>
+                        <DataTemplate DataType="{x:Type local:DataCustomerTab}">
+                            <views:DataCustomerView/>
+                        </DataTemplate>
+                        <DataTemplate DataType="{x:Type local:DataOrderTab}">
+                            <views:DataOrderView/>
+                        </DataTemplate>
+                        <Style TargetType="{x:Type TabPanel}">
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </TabControl.Resources>
+
+                    <TabControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                <Run Text="{Binding tabName}"/>
+                                <Hyperlink x:Name="CloseTabButton" Foreground="{x:Null}" Command="{Binding tabClose}"> <Image Source="/OrderForm;component/Images/CloseMarker.png" Width="12" Height="12"/> </Hyperlink>
+                            </TextBlock>
+                        </DataTemplate>
+                    </TabControl.ItemTemplate>
+                </TabControl>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

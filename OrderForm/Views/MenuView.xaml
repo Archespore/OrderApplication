@@ -1,0 +1,143 @@
+﻿<UserControl x:Class="OrderForm.Views.MenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OrderForm.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="630" d:DesignWidth="1120"
+             MaxHeight="630" MaxWidth="1120">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="View Menu" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontFamily="Bebas Neue"/>
+
+        <Grid Grid.Row="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Row="0" Grid.Column="0" Background="#FFF3F2F2" BorderThickness="3" Margin="5,5">
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#3FA6D8FB"/>
+                        <GradientStop Color="#FFA6D8FB" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+            </Border>
+
+            <Border Grid.Row="1" Grid.Column="0" Background="#FFF3F2F2" BorderThickness="3" Margin="5,5">
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#3FA6D8FB"/>
+                        <GradientStop Color="#FFA6D8FB" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+            </Border>
+
+            <Border Grid.Row="0" Grid.Column="1" Background="#FFF3F2F2" BorderThickness="3" Margin="5,5">
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#3FA6D8FB"/>
+                        <GradientStop Color="#FFA6D8FB" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+            </Border>
+
+            <Border Grid.Row="1" Grid.Column="1" Background="#FFF3F2F2" BorderThickness="3" Margin="5,5">
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#3FA6D8FB"/>
+                        <GradientStop Color="#FFA6D8FB" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+            </Border>
+
+            <Grid Grid.Row="0" Grid.Column="0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Main Items" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Margin="0,15,0,0" FontFamily="Bebas Neue"/>
+                <ListView x:Name="MainItemsList" Grid.Row="1" Margin="10,5,10,10" ItemsSource="{Binding mainItems}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Width="150" Header="Name" DisplayMemberBinding="{Binding menuItemName}"/>
+                            <GridViewColumn Width="50" Header="Price" DisplayMemberBinding="{Binding menuItemPrice, StringFormat=${0}}"/>
+                            <GridViewColumn Width="300" Header="Description" DisplayMemberBinding="{Binding menuItemDescription}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+
+            <Grid Grid.Row="0" Grid.Column="1">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Side Items" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Margin="0,15,0,0" FontFamily="Bebas Neue"/>
+                <ListView x:Name="SideItemsList" Grid.Row="1" Margin="10,5,10,10" ItemsSource="{Binding sideItems}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Width="150" Header="Name" DisplayMemberBinding="{Binding menuItemName}"/>
+                            <GridViewColumn Width="50" Header="Price" DisplayMemberBinding="{Binding menuItemPrice, StringFormat=${0}}"/>
+                            <GridViewColumn Width="300" Header="Description" DisplayMemberBinding="{Binding menuItemDescription}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Other Items" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Margin="0,15,0,0" FontFamily="Bebas Neue"/>
+                <ListView x:Name="OtherItemsList" Grid.Row="1" Margin="10,5,10,10" ItemsSource="{Binding otherItems}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Width="150" Header="Name" DisplayMemberBinding="{Binding menuItemName}"/>
+                            <GridViewColumn Width="50" Header="Price" DisplayMemberBinding="{Binding menuItemPrice, StringFormat=${0}}"/>
+                            <GridViewColumn Width="300" Header="Description" DisplayMemberBinding="{Binding menuItemDescription}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="1">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Beverage items" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Margin="0,15,0,0" FontFamily="Bebas Neue"/>
+                <ListView x:Name="DrinkItemsList" Grid.Row="1" Margin="10,5,10,10" ItemsSource="{Binding drinkItems}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Width="150" Header="Name" DisplayMemberBinding="{Binding menuItemName}"/>
+                            <GridViewColumn Width="50" Header="Price" DisplayMemberBinding="{Binding menuItemPrice, StringFormat=${0}}"/>
+                            <GridViewColumn Width="300" Header="Description" DisplayMemberBinding="{Binding menuItemDescription}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
